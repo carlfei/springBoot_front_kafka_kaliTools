@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="icon" type="image/png" href="img/mi_favicon.png" />
+<title>Kali online | web tools</title>
+<meta charset="utf-8">
+
+<style>
+body {
+	background-image: url("img/img_background.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+html {
+	height: 100%
+}
+
+.img_in:hover {
+	background-color: white;
+	color: black;
+}
+
+.img_in {
+	width: 100px;
+}
+
+.prue {
+	display: flex;
+	justify-content: left;
+	align-items: left;
+}
+</style>
+
+</head>
+<body>
+
+
+	<div id="nav-placeholder"></div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+	<script type="text/javascript">
+ 		
+$.get("nav_index.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+
+
+</script>
+
+	<center>
+		<h4 class="fuente" style="color: white;">
+			<img src="icons/dragon_fly.png" alt="kali" />Kali online, some kali
+			tools
+		</h4>
+		<!-- 
+			<p style="color:white;">some kali tools</p>
+			-->
+	</center>
+	<div class="container" id="menu_index_1">
+
+		<div class="vertical-center-row">
+			<form class="form-inline search" action="#" id="mi_form">
+
+
+
+				<div class="container table-responsive">
+
+					<table class="table table-dark table-hover">
+						<!-- 
+						<thead>
+							<tr>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						-->
+						<tbody>
+							<tr>
+
+								<td class="img_in"
+									onclick="javascript:location.href='/nmap-web'"><p
+										class="prue fuente_2">Nmap</p>
+									<img src="icons/nmap.png" alt="nmap" /></td>
+									
+									<td class="img_in"
+									onclick="javascript:location.href='/nikto-web'"><p
+										class="prue fuente_2">Nikto</p>
+									<img src="icons/nikto.png" alt="nikto" /></td>
+								
+								<td class="img_in"
+									onclick="javascript:location.href='/urlcrazy-web'"><p
+										class="prue fuente_2">Urlcrazy</p>
+									<img src="icons/urlcrazy.png" alt="Urlcrazy" /></td>
+								<td class="img_in">&nbsp;</td>
+							</tr>
+
+							<tr>
+								<td class="img_in"
+									onclick="javascript:location.href='/whatweb-web'"><p
+										class="prue fuente_2">What web</p>
+									<img src="icons/whatweb.png" alt="whatweb" /></td>
+									
+									
+										<!-- 
+							
+									 -->
+									
+								<td class="img_in"
+									onclick="javascript:location.href='/wpscan-web'"><p
+										class="prue fuente_2">Wpscan</p>
+									<img src="icons/wpscan.png" alt="Wpscan" /></td>
+									
+								<td class="img_in">&nbsp;</td>
+								<td class="img_in">&nbsp;</td>
+							</tr>
+
+
+
+
+							<tr>
+
+
+
+								<td class="img_in"
+									onclick="javascript:location.href='/theharvester-web'"><p
+										class="prue fuente_2">TheHarvester</p>
+									<img src="icons/harvester.png" alt="harvester" /></td>
+									<td class="img_in"
+									onclick="javascript:location.href='/whois-web'"><p
+										class="prue fuente_2">Whois</p>
+									<img src="icons/whois.png" alt="whois" /></td>
+								<td class="img_in">&nbsp;</td>
+								<td class="img_in">&nbsp;</td>
+							</tr>
+
+
+
+
+
+
+
+							<tr>
+								<td class="img_in"
+									onclick="javascript:location.href='/sherlock-web'"><p
+										class="prue fuente_2">Sherlock</p>
+									<img src="icons/sherlock.png" alt="sherlock" /></td>
+								
+									<td class="img_in"
+									onclick="javascript:location.href='/traceroute-web'"><p
+										class="prue fuente_2">Traceroute</p>
+									<img src="icons/traceroute.png" alt="Traceroute" /></td>
+								
+								<td class="img_in">&nbsp;</td>
+								<td class="img_in">&nbsp;</td>
+							</tr>
+
+
+
+							<!-- 
+								<tr>
+								<td class="img_in">&nbsp;</td>
+								<td class="img_in">&nbsp;</td>
+								<td class="img_in">&nbsp;</td>
+								<td class="img_in">&nbsp;</td>
+							</tr>
+							-->
+
+
+
+
+						</tbody>
+					</table>
+				</div>
+
+
+			</form>
+		</div>
+	</div>
+
+
+</body>
+</html>

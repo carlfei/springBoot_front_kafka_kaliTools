@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Nmap</title>
+<meta charset="utf-8">
+</head>
+<style>
+body {
+	background-image: url("img/img_background.png");
+	background-repeat: no-repeat;
+	/*
+	background-position: center;
+	background-size: cover;
+	*/
+}
+</style>
+<body onload="functionResetRadios();">
+	<div id="nav-placeholder"></div>
+
+	<script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+
+$.get("nav.html", function(data){  //pone la barra de navegacion
+    $("#nav-placeholder").replaceWith(data);
+});
+
+
+$(document).ready(function(){ //muestra y oculta la consola
+
+
+$(".menu_tool").toggle();
+
+
+  $("#validate_ip").click(function(){
+$(".menu_tool").toggle();  
+  $(".url").toggle();
+  
+    });
+  
+  
+    $(".menu_tools_nav").click(function(){
+$(".menu_tool").toggle();  
+  $(".url").toggle();
+  });
+  
+  
+});
+
+
+
+var idRadios=["a1","b1","c1","d1","e1","f1","g1","h1","i1","j1"];
+
+var textosId="0";
+
+function functionResetRadios(){//limpia la conosola --> con el boton return y reload
+
+for(i=0; i<10; i++){
+
+if(!i==0){
+document.getElementById(idRadios[i]).checked = false;
+document.getElementById(i).disabled = true;
+}else{
+document.getElementById(idRadios[i]).checked = true;
+document.getElementById(i).disabled = false;
+}
+
+}
+
+textosId="0";
+}
+
+
+
+
+function functionClear(values){ //permite solo la entrada numerica
+
+if (/\D/g.test(values)){
+
+return  values.replace(/\D/g,'');
+}else{
+return values;
+}
+}
+
+function functionRadioInput(idsText) { //crea la funcionalidad de la consola
+
+	document.getElementById(idsText).disabled = false;
+	if(textosId!=""){
+	document.getElementById(textosId).disabled = true;
+	}
+textosId=idsText;
+
+  
+}
+
+
+var tt=0;
+function recibePaquetes(dd){ //funcion llamada desde el main.js
+
+
+$('#result').html(dd);
+
+if(tt==0){ //inicia el callback
+ idinter=setInterval(funcionAjax, 200);	
+ 
+ }
+tt++;
+
+var res = dd.substring(dd.length-30, dd.length-1);
+if(res.includes("&nbsp;")){ //para el callback
+clearInterval(idinter);
+tt=0;
+}
+
+function funcionAjax(){
+mi_ajax("interval");
+}
+
+
+}
+
+/* para ir posicionandose el cursor en el texto
+var emoticon = ':)';
+var val = $('#result').val();
+$('#result').select().val(val + emoticon);
+
+*/
+</script>
+
+
+	<center>
+
+		<textarea id="result" class="menu_tool">
+		</textarea>
+		<button class="btn btn-primary btn-dark menu_tool menu_tools_nav"  onclick="functionResetRadios();" id="btn_back">back</button>
+
+
+	</center>
+
+
+
+
+	<div class="container url" id="/nmap_service">
+		<div class="vertical-center-row">
+			<form class="form-inline search" action="#" id="mi_form">
+
+
+
+				<div class="container table-responsive">
+
+					<table class="table table-dark table-hover">
+						<thead>
+							<tr>
+								<th>Nmap Commands</th>
+								<th>Value</th>
+								<th>Nmap Commands</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<!-- 
+		autocomplete="on"
+		 -->
+								<td><input type="radio" id="a1" name="optradio"
+									onclick="functionRadioInput('0');" checked>-p</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="p" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="0"></input></td>
+								<td><input type="radio" id="b1"
+									onclick="functionRadioInput('1');" name="optradio">-sS</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="sS" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="1" disabled></input></td>
+							</tr>
+							<tr>
+								<td><input type="radio" id="c1" name="optradio"
+									onclick="functionRadioInput('2');">-O</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="O" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="2" disabled></input></td>
+								<td><input type="radio" id="d1" name="optradio"
+									onclick="functionRadioInput('3');">-A</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="A" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="3" disabled></input></td>
+							</tr>
+							<tr>
+								<td><input type="radio" id="e1" name="optradio"
+									onclick="functionRadioInput('4');">-sV</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="sV" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="4" disabled></input></td>
+								<td><input type="radio" id="f1" name="optradio"
+									onclick="functionRadioInput('5');">-sV
+									--version-intensity</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="V" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="5" disabled></input></td>
+							</tr>
+							<tr>
+								<td><input type="radio" id="g1" name="optradio"
+									onclick="functionRadioInput('6');">-sP</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="sP" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="6" disabled></input></td>
+								<td><input type="radio" id="h1" name="optradio"
+									onclick="functionRadioInput('7');">-F</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="F" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="7" disabled></input></td>
+							</tr>
+							<tr>
+								<td><input type="radio" id="i1" name="optradio"
+									onclick="functionRadioInput('8');">-v</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="v" type="text"
+									onkeyup="this.value=functionClear(this.value)" maxlength="1"
+									id="8" disabled></input></td>
+								<td><input type="radio" id="j1" name="optradio"
+									onclick="functionRadioInput('9');">-PN</td>
+								<td><input class="form-control-sm small-input box_text"
+									name="PN" onkeyup="this.value=functionClear(this.value)"
+									type="text" maxlength="1" id="9" disabled></input></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+				<input class="form-control mr-sm-2" type="text" id="mi_search"
+					placeholder="Host" maxlength="15">
+
+				<button class="btn btn-primary btn-dark" id="validate_ip"
+					type="submit">nmap</button>
+
+			</form>
+		</div>
+	</div>
+
+
+</body>
+</html>

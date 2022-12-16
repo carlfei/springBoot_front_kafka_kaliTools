@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Wpscan | kali tools</title>
+<link rel="icon" type="image/png" href="img/mi_favicon.png"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="node/node_modules/xterm/css/xterm.css" />
+</head>
+<link rel="stylesheet" href="css/cab.css" />
+<style>
+
+body {
+	background-image: url("img/img_background.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+html {
+	height: 100%
+}
+
+
+</style>
+<body>
+	<div id="nav-placeholder"></div>
+	<script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+	<script src="node/node_modules/xterm/lib/xterm.js"></script>
+	<script type="text/javascript" src="node/script_front.js">
+	</script>
+	<br>
+	<div class="aliner_r">
+		<h2 class="fuente" style="color: white;">Wpscan web&nbsp;&nbsp;<img src="icons/wpscan.png" alt="wpscan"/></h2>
+		<div class="aliner">
+			<br><br>
+			<div id="result" class="tooles"></div>
+
+		<button title="Return" class="btn btn-primary btn-dark tool menu_tools_nav fuente_2"
+			onclick="stop_now();" id="btn_back">back</button>
+		</div>
+	
+	
+	</div>
+
+
+
+	<div class="container url" id="/wpscan_service">
+		<div class="vertical-center-row">
+			<form class="form-inline search" action="#" id="mi_form">
+
+				<div class="container table-responsive"></div>
+
+				<input class="form-control mr-sm-2" type="text" id="mi_search"
+					placeholder="Domain" maxlength="100" size="75">
+
+				<button title="Run" class="btn btn-primary btn-dark fuente_2" id="validate_ip"
+					type="submit">Wpscan</button>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

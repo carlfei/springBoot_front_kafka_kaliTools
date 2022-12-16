@@ -1,0 +1,36 @@
+@font-face
+{
+   font-family: "crishack";
+  /* src: url("Tecno Extrema.otf");*/   
+   src: url("PunkEvent.ttf");
+   /*
+   src: url("fuentefancy.eot?#amocristalab") format("embedded-opentype"),
+        url("fuentefancy.woff") format("woff"),
+        url("fuentefancy.ttf") format("truetype"),
+        url("fuentefancy.svg#IDdelafuente") format("svg");
+        */
+}
+
+
+.fuente{
+font-family:crishack;
+}
+
+
+@font-face
+{
+   font-family: "crishack_2";
+   src: url("Tecno Extrema.otf");   
+ 
+   /*
+   src: url("fuentefancy.eot?#amocristalab") format("embedded-opentype"),
+        url("fuentefancy.woff") format("woff"),
+        url("fuentefancy.ttf") format("truetype"),
+        url("fuentefancy.svg#IDdelafuente") format("svg");
+        */
+}
+
+
+.fuente_2{
+font-family:crishack_2;
+}
